@@ -13,7 +13,7 @@ tasks {
   }
 }
 
-defaultTasks("test")
+defaultTasks("clean", "test")
 
 allprojects {
   apply(plugin = "java")

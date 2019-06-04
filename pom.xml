@@ -71,7 +71,7 @@
   </dependencies>
 
   <build>
-    <defaultGoal>test</defaultGoal>
+    <defaultGoal>clean test</defaultGoal>
     <sourceDirectory>template/src/main/scala</sourceDirectory>
     <testSourceDirectory>template/src/test/scala</testSourceDirectory>
     <plugins>
