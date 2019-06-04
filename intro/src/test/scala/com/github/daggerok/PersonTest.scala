@@ -25,4 +25,16 @@ class PersonTest {
       () => assertEquals(2, adults.length)
     )
   }
+  @Test def scala_should_easy_parallelize_just_with_par(): Unit = {
+    val people = Array(
+      Person("Max", 36),
+      Person("Maksim", 26),
+      Person("Maksinmko", 16)
+    )
+    val (adults, minors) = people.par partition (_.age > 18)
+    assertAll("should use functional principles",
+      () => assertEquals(1, minors.length),
+      () => assertEquals(2, adults.length)
+    )
+  }
 }
