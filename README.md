@@ -12,6 +12,7 @@ _resources_
 _update versions_
 
 ```bash
+ ./mvnw clean ; ./gradlew clean
 ./mvnw versions:display-property-updates
 ./gradlew dependencyUpdates -Drevision=release
 ```
