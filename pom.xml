@@ -130,6 +130,7 @@
 
   <modules>
     <module>template</module>
+    <module>intro</module>
   </modules>
 
 </project>

@@ -7,5 +7,6 @@ pluginManagement {
 }
 
 include(
-    ":template"
+    ":template",
+    ":intro"
 )
