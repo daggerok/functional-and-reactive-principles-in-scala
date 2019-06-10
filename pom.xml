@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.daggerok</groupId>
   <artifactId>functional-and-reactive-principles-in-scala</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <!--
     unix:
@@ -30,10 +30,12 @@
     <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
 
     <scala.version>${scala-baseline.version}.${scala-minor.version}</scala.version>
-    <scala-baseline.version>2.12</scala-baseline.version>
     <!--<scala-minor.version>3</scala-minor.version>
     <scala-maven-plugin.version>3.2.1</scala-maven-plugin.version>-->
-    <scala-minor.version>6</scala-minor.version>
+    <scala-baseline.version>2.13</scala-baseline.version>
+    <scala-minor.version>0</scala-minor.version>
+    <!--<scala-baseline.version>2.12</scala-baseline.version>
+    <scala-minor.version>6</scala-minor.version>-->
     <scala-maven-plugin.version>4.0.2</scala-maven-plugin.version>
   </properties>
 
