@@ -3,26 +3,34 @@ notifications:
 git:
   quiet: true
   depth: 1
-env:
-  global:
-    - TERM=dumb
 language: java
 jdk: openjdk8
 install: true
+env:
+  global:
+    - TERM=dumb
+    - PROJECTS=("intro" "template")
 jobs:
   include:
-    # maven
-    - stage: maven
-      name: "Java 8"
+    - stage: openjdk8
       jdk: openjdk8
-      script:
-        - cd $TRAVIS_BUILD_DIR && ./mvnw clean test
-    # gradle
-    - stage: gradle
-      name: "Java 8"
+      name: maven
+      before_script:
+        - for i in ${PROJECTS} ; do
+            cp -Rfv $TRAVIS_BUILD_DIR/$i/src/test/resources/logback-maven.xml $TRAVIS_BUILD_DIR/$i/src/test/resources/logback.xml ;
+          done
+      script: cd $TRAVIS_BUILD_DIR && ./mvnw clean test
+    - stage: openjdk8
       jdk: openjdk8
+      name: gradle
+      before_script:
+        - for i in ${PROJECTS} ; do
+            cp -Rfv $TRAVIS_BUILD_DIR/$i/src/test/resources/logback-gradle.xml $TRAVIS_BUILD_DIR/$i/src/test/resources/logback.xml ;
+          done
       script: cd $TRAVIS_BUILD_DIR && ./gradlew clean test
 cache:
   directories:
     - ~/.gradle
+    - ~/.ivy
+    - ~/.sbt
     - ~/.m2

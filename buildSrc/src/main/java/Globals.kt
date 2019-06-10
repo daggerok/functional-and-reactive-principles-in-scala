@@ -3,7 +3,7 @@ import org.gradle.api.JavaVersion
 object Globals {
 
   object Project {
-    const val version = "1.0-SNAPSHOT"
+    const val version = "1.1-SNAPSHOT"
     const val artifactId = "functional-and-reactive-principles-in-scala"
     const val groupId = "com.github.daggerok"
   }
@@ -14,11 +14,11 @@ object Globals {
   const val scalaMinorVersion = "6"
   const val scalaVersion = "$scalaBaselineVersion.$scalaMinorVersion"
 
-  const val junitVersion = "4.12"
-  const val junitJupiterVersion = "5.5.0-M1"
+  const val junitVersion = "4.13-beta-3"
+  const val junitJupiterVersion = "5.5.0-RC1"
 
   object Gradle {
-    const val wrapperVersion = "5.5-rc-1"
+    const val wrapperVersion = "5.5-rc-2"
 
     object Plugin {
       const val versionsVersion = "0.21.0"
