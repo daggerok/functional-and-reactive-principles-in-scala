@@ -6,12 +6,17 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.daggerok</groupId>
   <artifactId>functional-and-reactive-principles-in-scala</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-
+  <!--
+    unix:
+      ./mvnw build-helper:parse-version versions:set -DgenerateBackupPoms=false -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT
+    windows:
+      call mvnw build-helper:parse-version versions:set -DgenerateBackupPoms=false -DnewVersion=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}-SNAPSHOT
+  -->
   <properties>
-    <junit.version>4.12</junit.version>
-    <junit-jupiter.version>5.5.0-M1</junit-jupiter.version>
+    <junit.version>4.13-beta-3</junit.version>
+    <junit-jupiter.version>5.5.0-RC1</junit-jupiter.version>
 
     <java.version>1.8</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
