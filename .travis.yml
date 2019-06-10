@@ -1,15 +1,52 @@
-notifications:
-  email: false
+dist: xenial
 git:
   quiet: true
   depth: 1
+notifications:
+  email: false
 language: java
 jdk: openjdk8
+python: 3
 install: true
 env:
   global:
     - TERM=dumb
     - PROJECTS=("intro" "template")
+addons:
+  apt:
+    update: true
+    packages:
+      - jq
+      - sudo
+      - lsof
+      - wget
+      - bash
+      - curl
+      #- docker-ce
+      - python3-dev
+      - python3-pip
+      - python3-six
+      - python3-setuptools
+#services:
+#  - docker
+before_install:
+  ## gradle
+  #- curl -s "https://get.sdkman.io" | bash
+  #- source "$HOME/.sdkman/bin/sdkman-init.sh"
+  #- sed -i -e 's/^sdkman_auto_answer=false$/sdkman_auto_answer=true/g' "$HOME/.sdkman/etc/config"
+  #- sdk use gradle 5.5-rc-2
+  #- source "$HOME/.sdkman/bin/sdkman-init.sh"
+  #
+  #- docker-compose -v
+  - export PATH=$HOME/.local/bin:$PATH
+  - pip3 install --user $(whoami) --upgrade pip >/dev/null # pip3 -> pip
+  - pip install --user $(whoami) --upgrade httpie >/dev/null 2>&1
+  #- pip install --user $(whoami) --upgrade docker-compose httpie >/dev/null 2>&1
+  - http --version --debug
+  #- docker-compose -v
+  #
+  - source <(curl -fsSL https://raw.github.com/daggerok/bash-functions/master/main.bash)
+  - stop_any 5432 5672 27017 8080 8000 8081 80 80
 jobs:
   include:
     - stage: openjdk8
