@@ -5,8 +5,9 @@ NOTE: _This project has been based on [GitHub: daggerok/main-starter](https://gi
 
 _resources_
 
-* [Functional Programming Principles in Scala](https://www.youtube.com/channel/UC606CODOUaA3-E5LcC5yKAQ)
-* [Principles of Reactive Programming in Scala](https://www.youtube.com/playlist?list=PLMhMDErmC1TdBMxd3KnRfYiBV2ELvLyxN)
+* [YouTube: Functional Programming Principles in Scala](https://www.youtube.com/channel/UC606CODOUaA3-E5LcC5yKAQ)
+* [YouTube: Principles of Reactive Programming in Scala](https://www.youtube.com/playlist?list=PLMhMDErmC1TdBMxd3KnRfYiBV2ELvLyxN)
+* [YouTube: Введение в язык программирования Scala](https://www.youtube.com/watch?v=EVz04VMtUfE)
 
 <!--
 _update versions_
