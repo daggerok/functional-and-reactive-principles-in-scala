@@ -14,20 +14,22 @@ jobs:
   include:
     - stage: openjdk8
       jdk: openjdk8
-      name: maven
-      before_script:
-        - for i in ${PROJECTS} ; do
-            cp -Rfv $TRAVIS_BUILD_DIR/$i/src/test/resources/logback-maven.xml $TRAVIS_BUILD_DIR/$i/src/test/resources/logback.xml ;
-          done
+      name: "maven tests"
+      before_script: for i in ${PROJECTS} ; do cp -Rfv $TRAVIS_BUILD_DIR/$i/src/test/resources/logback-maven.xml $TRAVIS_BUILD_DIR/$i/src/test/resources/logback.xml ; done
       script: cd $TRAVIS_BUILD_DIR && ./mvnw clean test
     - stage: openjdk8
       jdk: openjdk8
-      name: gradle
-      before_script:
-        - for i in ${PROJECTS} ; do
-            cp -Rfv $TRAVIS_BUILD_DIR/$i/src/test/resources/logback-gradle.xml $TRAVIS_BUILD_DIR/$i/src/test/resources/logback.xml ;
-          done
+      name: "maven updates"
+      script: cd $TRAVIS_BUILD_DIR && ./mvnw versions:display-property-updates
+    - stage: openjdk8
+      jdk: openjdk8
+      name: "gradle tests"
+      before_script: for i in ${PROJECTS} ; do cp -Rfv $TRAVIS_BUILD_DIR/$i/src/test/resources/logback-gradle.xml $TRAVIS_BUILD_DIR/$i/src/test/resources/logback.xml ; done
       script: cd $TRAVIS_BUILD_DIR && ./gradlew clean test
+    - stage: openjdk8
+      jdk: openjdk8
+      name: "gradle updates"
+      script: cd $TRAVIS_BUILD_DIR && ./gradlew dependencyUpdates -Drevision=release
 cache:
   directories:
     - ~/.gradle
