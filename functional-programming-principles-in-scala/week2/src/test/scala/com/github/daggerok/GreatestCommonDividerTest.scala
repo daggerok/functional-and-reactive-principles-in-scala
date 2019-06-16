@@ -10,10 +10,12 @@ class GreatestCommonDividerTest {
 
     println(s"gcd(2, 4) = ${gcd(2, 4)}")
     println(s"gcd(3, 6) = ${gcd(3, 6)}")
+    println(s"gcd(14, 21) = ${gcd(14, 21)}")
 
     assertAll("tests should pass",
       () => assertEquals(2, gcd(2, 4)),
-      () => assertEquals(3, gcd(3, 6))
+      () => assertEquals(3, gcd(3, 6)),
+      () => assertEquals(7, gcd(14, 21))
     )
   }
 }
