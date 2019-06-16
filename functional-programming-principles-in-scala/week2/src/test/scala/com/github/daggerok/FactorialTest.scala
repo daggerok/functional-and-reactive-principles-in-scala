@@ -24,4 +24,19 @@ class FactorialTest {
       () => assertEquals(120, factorial(5)),
     )
   }
+
+  @Test def test_loop_with_accumulator_algorithm(): Unit = {
+    def factorial(n: Int): Int = {
+      def loop(acc: Int, n: Int): Int =
+        if (n == 0) acc
+        else loop(acc * n,  n - 1)
+      loop(1, n)
+    }
+
+    println(s"factorial(5) = ${factorial(5)}")
+
+    assertAll("tests should pass",
+      () => assertEquals(120, factorial(5)),
+    )
+  }
 }
