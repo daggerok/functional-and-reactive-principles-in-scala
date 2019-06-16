@@ -12,13 +12,17 @@ class HigherOrderFunctionsTest {
     def sum(f: Int => Int, a: Int, b: Int): Int =
       if (a > b) 0 else f(a) + sum(f, a + 1, b)
 
+    def sumOfIntegers(a: Int, b: Int) = sum(identity, a, b)
+    def sumOfDoubles(a: Int, b: Int) = sum(double, a, b)
+    def sumOfCubes(a: Int, b: Int) = sum(cube, a, b)
+
     assertAll("tests should pass",
-      () => assertEquals(3, sum(identity, 1, 2), "1 + 2 == 3"),
-      () => assertEquals(6, sum(identity, 1, 3), "1 + 2 + 3 == 6"),
-      () => assertEquals(5, sum(double, 1, 2), "1*2 + 2*2 == 1 + 4 == 5"),
-      () => assertEquals(14, sum(double, 1, 3), "1*1 + 2*2 + 3*3 == 1 + 4 + 9 == 14"),
-      () => assertEquals(9, sum(cube, 1, 2), "1*1*1 + 2*2*2 == 1 + 8 == 9"),
-      () => assertEquals(36, sum(cube, 1, 3), "1*1*1 + 2*2*2 + 3*3*3 == 1 + 8 + 27 == 36"),
+      () => assertEquals(3, sumOfIntegers(1, 2), "1 + 2 == 3"),
+      () => assertEquals(6, sumOfIntegers(1, 3), "1 + 2 + 3 == 6"),
+      () => assertEquals(5, sumOfDoubles(1, 2), "1*2 + 2*2 == 1 + 4 == 5"),
+      () => assertEquals(14, sumOfDoubles(1, 3), "1*1 + 2*2 + 3*3 == 1 + 4 + 9 == 14"),
+      () => assertEquals(9, sumOfCubes(1, 2), "1*1*1 + 2*2*2 == 1 + 8 == 9"),
+      () => assertEquals(36, sumOfCubes(1, 3), "1*1*1 + 2*2*2 + 3*3*3 == 1 + 8 + 27 == 36"),
     )
   }
 
