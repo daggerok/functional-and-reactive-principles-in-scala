@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
 
 class GreatestCommonDividerTest {
-  @Test def test(): Unit = {
+  @Test def test_Euclid_algorithm(): Unit = {
     def gcd(a: Int, b: Int): Int =
       if (b == 0) a else gcd(a, b % a)
 
