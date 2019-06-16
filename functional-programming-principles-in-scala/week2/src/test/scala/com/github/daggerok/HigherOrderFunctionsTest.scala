@@ -19,8 +19,10 @@ class HigherOrderFunctionsTest {
     assertAll("tests should pass",
       () => assertEquals(3, sumOfIntegers(1, 2), "1 + 2 == 3"),
       () => assertEquals(6, sumOfIntegers(1, 3), "1 + 2 + 3 == 6"),
+
       () => assertEquals(5, sumOfDoubles(1, 2), "1*2 + 2*2 == 1 + 4 == 5"),
       () => assertEquals(14, sumOfDoubles(1, 3), "1*1 + 2*2 + 3*3 == 1 + 4 + 9 == 14"),
+
       () => assertEquals(9, sumOfCubes(1, 2), "1*1*1 + 2*2*2 == 1 + 8 == 9"),
       () => assertEquals(36, sumOfCubes(1, 3), "1*1*1 + 2*2*2 + 3*3*3 == 1 + 8 + 27 == 36"),
     )

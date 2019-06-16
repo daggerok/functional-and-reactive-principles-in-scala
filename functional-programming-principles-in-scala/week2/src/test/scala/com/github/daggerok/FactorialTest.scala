@@ -2,6 +2,7 @@ package com.github.daggerok
 
 import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.function.Executable
 
 class FactorialTest {
   @Test def test_classic_algorithm(): Unit = {
