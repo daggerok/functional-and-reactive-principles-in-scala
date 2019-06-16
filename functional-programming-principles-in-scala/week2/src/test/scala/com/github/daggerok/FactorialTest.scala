@@ -36,6 +36,7 @@ class FactorialTest {
     println(s"factorial(5) = ${factorial(5)}")
 
     assertAll("tests should pass",
+      () => assertEquals(24, factorial(4)),
       () => assertEquals(120, factorial(5)),
     )
   }

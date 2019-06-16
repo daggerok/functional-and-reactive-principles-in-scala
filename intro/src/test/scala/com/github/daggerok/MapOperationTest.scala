@@ -19,7 +19,7 @@ class MapOperationTest {
       () => assertTrue(empty.isEmpty),
       () => assertEquals(1, sigle.size),
       () => assertEquals(12, multi.size),
-      () => assertEquals(13, reactive.size)
+      () => assertEquals(13, reactive.size),
     )
   }
 }

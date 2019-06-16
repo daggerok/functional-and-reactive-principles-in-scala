@@ -11,7 +11,7 @@ class PatternMatchingTest {
       case _ => false
     }
     assertAll("should not match",
-      () => assertEquals(false, result)
+      () => assertEquals(false, result),
     )
   }
 }

@@ -12,7 +12,7 @@ class PersonTest {
 
     assertAll("should use case class",
       () => assertEquals(36, person.age),
-      () => assertEquals("Max", person.name)
+      () => assertEquals("Max", person.name),
     )
   }
 
@@ -26,7 +26,7 @@ class PersonTest {
 
     assertAll("should use functional principles",
       () => assertEquals(1, minors.length),
-      () => assertEquals(2, adults.length)
+      () => assertEquals(2, adults.length),
     )
   }
 
@@ -40,7 +40,7 @@ class PersonTest {
 
     assertAll("should parallelize",
       () => assertTrue(1 == minors.length),
-      () => assertEquals(2, adults.length)
+      () => assertEquals(2, adults.length),
     )
   }
 }
