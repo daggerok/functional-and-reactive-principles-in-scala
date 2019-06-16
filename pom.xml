@@ -136,6 +136,7 @@
   <modules>
     <module>template</module>
     <module>intro</module>
+    <module>functional-programming-principles-in-scala/week1</module>
   </modules>
 
 </project>
