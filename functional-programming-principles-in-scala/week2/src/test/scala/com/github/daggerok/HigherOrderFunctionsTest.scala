@@ -5,6 +5,24 @@ import org.junit.jupiter.api.Test
 
 class HigherOrderFunctionsTest {
   @Test def test_higher_order_functions(): Unit = {
+    def identity(x: Int) = x
+    def double(x: Int) = x * x
+    def cube(x: Int) = x * x * x
+
+    def sum(f: Int => Int, a: Int, b: Int): Int =
+      if (a > b) 0 else f(a) + sum(f, a + 1, b)
+
+    assertAll("tests should pass",
+      () => assertEquals(3, sum(identity, 1, 2), "1 + 2 == 3"),
+      () => assertEquals(6, sum(identity, 1, 3), "1 + 2 + 3 == 6"),
+      () => assertEquals(5, sum(double, 1, 2), "1*2 + 2*2 == 1 + 4 == 5"),
+      () => assertEquals(14, sum(double, 1, 3), "1*1 + 2*2 + 3*3 == 1 + 4 + 9 == 14"),
+      () => assertEquals(9, sum(cube, 1, 2), "1*1*1 + 2*2*2 == 1 + 8 == 9"),
+      () => assertEquals(36, sum(cube, 1, 3), "1*1*1 + 2*2*2 + 3*3*3 == 1 + 8 + 27 == 36"),
+    )
+  }
+
+  @Test def test_sumOfDoubles_higher_order_functions(): Unit = {
     def sum(f: Int => Int, a: Int, b: Int): Int =
       if (a > b) 0 else f(a) + sum(f, a + 1, b)
 
