@@ -4,6 +4,28 @@ import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
 
 class HigherOrderFunctionsTest {
+  @Test def test_higher_order_functions(): Unit = {
+    def sum(f: Int => Int, a: Int, b: Int): Int =
+      if (a > b) 0 else f(a) + sum(f, a + 1, b)
+
+    def double(x: Int) = x * x
+
+    println(s"sum(double, 1, 1) = ${sum(double, 1, 1)}")
+    println(s"sum(double, 2, 2) = ${sum(double, 2, 2)}")
+    println(s"sum(double, 3, 3) = ${sum(double, 3, 3)}")
+    println(s"sum(double, 2, 3) = ${sum(double, 2, 3)}")
+    println(s"sum(double, 1, 3) = ${sum(double, 1, 3)}")
+
+    assertAll("tests should pass",
+      () => assertEquals(1, sum(double, 1, 1)),
+      () => assertEquals(4, sum(double, 2, 2)),
+      () => assertEquals(5, sum(double, 1, 2)),
+      () => assertEquals(9, sum(double, 3, 3)),
+      () => assertEquals(13, sum(double, 2, 3)),
+      () => assertEquals(14, sum(double, 1, 3)),
+    )
+  }
+
   @Test def test_sum_of_cubes(): Unit = {
     def cube(x: Int) = x * x * x
     def sumOfCubes(a: Int, b: Int): Int =
