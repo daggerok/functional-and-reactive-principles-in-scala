@@ -17,11 +17,34 @@ class SquareRootTest {
     sqrtIter(1.0)
   }
 
-  @Test def test(): Unit = {
-    println(sqrt(4))
-    assertAll("should pass",
-      () => assertTrue(true),
-      () => assertEquals(2, 2)
+  @Test def test_2(): Unit = {
+    val sqrt2 = sqrt(2)
+    assertAll("tests should pass",
+      () => assertTrue(sqrt2 > 1.4142),
+      () => assertTrue(sqrt2 < 1.4143)
+    )
+  }
+
+  @Test def test_4(): Unit = {
+    val sqrt4 = sqrt(4)
+    assertAll("tests should pass",
+      () => assertTrue(sqrt4 > 2.0000),
+      () => assertTrue(sqrt4 < 2.0007)
+    )
+  }
+
+  @Test def test_0_000001(): Unit = {
+    val sqrt0_000001 = sqrt(1e-6)
+    assertAll("tests should pass",
+      () => assertTrue(sqrt0_000001 > 0.0010000001),
+      () => assertTrue(sqrt0_000001 < 0.0010000002)
+    )
+  }
+
+  @Test def test_1000000000000000000000000000000000000000000000000000000000000(): Unit = {
+    val sqrt1000000000000000000000000000000000000000000000000000000000000 = sqrt(1e60)
+    assertAll("tests should pass",
+      () => assertEquals(1.0000788456669446e30, sqrt1000000000000000000000000000000000000000000000000000000000000)
     )
   }
 }
