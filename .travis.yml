@@ -11,7 +11,7 @@ install: true
 env:
   global:
     - TERM=dumb
-    - PROJECTS=("intro" "template")
+    - PROJECTS=("intro" "template" "functional-programming-principles-in-scala/week1" "functional-programming-principles-in-scala/wee2")
 addons:
   apt:
     update: true

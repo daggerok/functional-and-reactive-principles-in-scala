@@ -30,11 +30,19 @@
     <junit-jupiter.version>5.5.0-RC1</junit-jupiter.version>
 
     <scala.version>${scala-baseline.version}.${scala-minor.version}</scala.version>
+    <scala.compat.version>${scala-baseline.version}</scala.compat.version>
+    <recompileMode>incremental</recompileMode>
+    <!-- THESE PROPS WORKS WITH PLUGIN: 3.2.1 VERSION
     <scala-baseline.version>2.12</scala-baseline.version>
-    <!--<scala-minor.version>3</scala-minor.version>
+    <scala-minor.version>3</scala-minor.version>
     <scala-maven-plugin.version>3.2.1</scala-maven-plugin.version>-->
+    <!-- THESE PROPS WORKS WITH PLUGIN: 4.0.2 AND SCALA: 2.12.6 VERSIONS -->
+    <scala-baseline.version>2.12</scala-baseline.version>
     <scala-minor.version>6</scala-minor.version>
     <scala-maven-plugin.version>4.0.2</scala-maven-plugin.version>
+    <!-- THESE ARE DOESN'T WORKED!
+    <scala-baseline.version>2.13</scala-baseline.version>
+    <scala-minor.version>0</scala-minor.version>-->
   </properties>
 
   <dependencyManagement>
