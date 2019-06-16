@@ -15,7 +15,7 @@ class GreatestCommonDividerTest {
     assertAll("tests should pass",
       () => assertEquals(2, gcd(2, 4)),
       () => assertEquals(3, gcd(3, 6)),
-      () => assertEquals(7, gcd(14, 21))
+      () => assertEquals(7, gcd(14, 21)),
     )
   }
 }
