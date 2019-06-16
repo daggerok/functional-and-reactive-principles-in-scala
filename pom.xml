@@ -134,9 +134,10 @@
   </build>
 
   <modules>
-    <module>template</module>
-    <module>intro</module>
+    <module>functional-programming-principles-in-scala/week2</module>
     <module>functional-programming-principles-in-scala/week1</module>
+    <module>intro</module>
+    <module>template</module>
   </modules>
 
 </project>

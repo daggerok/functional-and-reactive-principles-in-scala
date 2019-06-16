@@ -7,6 +7,7 @@ pluginManagement {
 }
 
 include(
+    ":functional-programming-principles-in-scala:week2",
     ":functional-programming-principles-in-scala:week1",
     ":intro",
     ":template"
